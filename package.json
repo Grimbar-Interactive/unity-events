@@ -2,7 +2,7 @@
   "name": "com.grimbar-interactive.unity-events",
   "displayName": "Unity Events",
   "version": "1.0.0",
-  "unity": "2020.3.25f1",
+  "unity": "2020.3",
   "description": "Event scriptable objects and listeners.",
   "keywords": [ "events", "game", "games", "unity" ],
   "category": "unity",
