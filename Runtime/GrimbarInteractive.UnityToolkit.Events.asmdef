@@ -1,0 +1,18 @@
+{
+    "name": "GrimbarInteractive.UnityToolkit.Events",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0ff51d9640894c441a1d1e5988309ba4",
+        "GUID:012f6a2d4192bc444bb8e5dde855b9bb",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
