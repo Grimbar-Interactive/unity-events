@@ -1,3 +1,4 @@
+#if ODIN_INSPECTOR
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEditor.Events;
@@ -26,3 +27,4 @@ public class UnityEventDrawer : OdinValueDrawer<UnityEvent>
         ValueEntry.SmartValue = value;
     }
 }
+#endif

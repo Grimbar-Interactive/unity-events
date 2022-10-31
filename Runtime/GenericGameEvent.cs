@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using GI.UnityToolkit.Variables;
+
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
 
 namespace GI.UnityToolkit.Events
 {
@@ -11,7 +14,11 @@ namespace GI.UnityToolkit.Events
         where TUnityEvent : UnityEvent<T>
         where TGenericGameEvent : GenericGameEvent<T, TUnityEvent, TGenericGameEvent>
     {
+#if ODIN_INSPECTOR
         [Title("Callbacks", TitleAlignment = TitleAlignments.Centered)]
+#else
+        [Header("Callbacks")]
+#endif
         [SerializeField] private TUnityEvent response = null;
 
         private readonly List<GenericGameEventListener<T, TUnityEvent, TGenericGameEvent>> _listeners =
