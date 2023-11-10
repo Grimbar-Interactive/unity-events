@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 namespace GI.UnityToolkit.Events
 {
-    public class BoolEventListener : GenericGameEventListener<bool, UnityBoolEvent, BoolEvent>
+    [AddComponentMenu("Event Listener/Bool Event Listener")]
+    public class BoolEventListenerBehaviour : GameEventListenerBehaviour<bool>
     {
         [SerializeField] private UnityEvent onInvokedTrue = null;
         [SerializeField] private UnityEvent onInvokedFalse = null;

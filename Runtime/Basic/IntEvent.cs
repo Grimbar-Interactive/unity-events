@@ -1,11 +1,17 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace GI.UnityToolkit.Events
 {
     [CreateAssetMenu(menuName = "Event/Basic/Int")]
-    public class IntEvent : GenericGameEvent<bool, UnityIntEvent, IntEvent> {}
-
-    [System.Serializable]
-    public class UnityIntEvent : UnityEvent<bool> {}
+    public class IntEvent : GameEvent<int>
+    {
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+#if !ODIN_INSPECTOR
+            debugValue = 42;
+#endif
+        }
+#endif
+    }
 }
