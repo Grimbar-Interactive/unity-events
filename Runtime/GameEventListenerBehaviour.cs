@@ -19,13 +19,13 @@ namespace GI.UnityToolkit.Events
         private void OnEnable()
         {
             if (!gameEvent) return;
-            gameEvent.RegisterListener(this);
+            gameEvent.AddListener(OnEventRaised);
         }
 
         private void OnDisable()
         {
             if (!gameEvent) return;
-            gameEvent.UnregisterListener(this);
+            gameEvent.RemoveListener(OnEventRaised);
         }
 
         public void OnEventRaised()
@@ -49,13 +49,13 @@ namespace GI.UnityToolkit.Events
         private void OnEnable()
         {
             if (!gameEvent) return;
-            gameEvent.AddListener(this);
+            gameEvent.AddListener(OnEventRaised);
         }
 
         private void OnDisable()
         {
             if (!gameEvent) return;
-            gameEvent.RemoveListener(this);
+            gameEvent.RemoveListener(OnEventRaised);
         }
 
         public virtual void OnEventRaised(T value)

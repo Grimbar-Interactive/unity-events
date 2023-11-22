@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ==
+## [1.2.1] - 2023-11-22
+### Updated
+- Simplifying AddListener and RemoveListener options for GameEvent and GameEvent<T> classes.
+
 ## [1.2.0] - 2023-11-10
 ### Updated
 - Refined Game Events and generic events to be less obtuse and more easily usable.

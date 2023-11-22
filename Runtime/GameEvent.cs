@@ -25,8 +25,8 @@ namespace GI.UnityToolkit.Events
         [Header("Callbacks")]
 #endif
         [SerializeField] private UnityEvent response = null;
-        
-        private readonly List<GameEventListenerBehaviour> _listeners = new();
+
+        private readonly List<Action> _actions = new();
         
 #if ODIN_INSPECTOR
         [Title("Debugging", TitleAlignment = TitleAlignments.Centered)]
@@ -36,24 +36,22 @@ namespace GI.UnityToolkit.Events
         
         [Button("Raise Event"), DisableIf(nameof(InEditorMode))]
 #endif
+        [UsedImplicitly]
         public void Raise()
         {
+            _actions.ForEach(action => action.Invoke());
             response?.Invoke();
-            for (var i = _listeners.Count - 1; i >= 0; i--)
-            {
-                _listeners[i].OnEventRaised();
-            }
         }
 
-        public void RegisterListener(GameEventListenerBehaviour listener)
+        public void AddListener(Action action)
         {
-            if (listener == null) return;
-            _listeners.Add(listener);
+            if (action == null) return;
+            _actions.Add(action);
         }
 
-        public void UnregisterListener(GameEventListenerBehaviour listener)
+        public void RemoveListener(Action action)
         {
-            _listeners.Remove(listener);
+            _actions.Remove(action);
         }
     }
     
@@ -66,32 +64,19 @@ namespace GI.UnityToolkit.Events
 #endif
         [SerializeField] private UnityEvent<T> response = null;
 
-        private readonly List<GameEventListenerBehaviour<T>> _listeners = new();
-
         private readonly List<Action<T>> _actions = new();
         
         [UsedImplicitly]
         public void Raise(T value)
         {
-            _listeners.ForEach(listener => listener.OnEventRaised(value));
             _actions.ForEach(action => action.Invoke(value));
             response?.Invoke(value);
         }
 
-        public void AddListener(GameEventListenerBehaviour<T> listener)
-        {
-            if (listener == null) return;
-            _listeners.Add(listener);
-        }
-
         public void AddListener(Action<T> action)
         {
+            if (action == null) return;
             _actions.Add(action);
-        }
-
-        public void RemoveListener(GameEventListenerBehaviour<T> listener)
-        {
-            _listeners.Remove(listener);
         }
 
         public void RemoveListener(Action<T> action)
