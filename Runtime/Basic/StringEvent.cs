@@ -3,5 +3,5 @@
 namespace GI.UnityToolkit.Events
 {
     [CreateAssetMenu(menuName = "Event/Basic/String")]
-    public class StringEvent : GameEvent<string> {}
+    public class StringEvent : GenericGameEvent<string> {}
 }

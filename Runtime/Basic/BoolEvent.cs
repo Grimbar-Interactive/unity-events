@@ -3,5 +3,5 @@ using UnityEngine;
 namespace GI.UnityToolkit.Events
 {
     [CreateAssetMenu(menuName = "Event/Basic/Bool")]
-    public class BoolEvent : GameEvent<bool> {}
+    public class BoolEvent : GenericGameEvent<bool> {}
 }

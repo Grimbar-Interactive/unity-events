@@ -41,7 +41,7 @@ namespace GI.UnityToolkit.Events
     public abstract class GameEventListenerBehaviour<T> : MonoBehaviour
     {
         [FormerlySerializedAs("Event")]
-        [SerializeField] protected GameEvent<T> gameEvent = null;
+        [SerializeField] protected GenericGameEvent<T> gameEvent = null;
         
         [FormerlySerializedAs("Response")]
         [SerializeField] protected UnityEvent<T> response = null;
