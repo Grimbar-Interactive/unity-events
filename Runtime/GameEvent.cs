@@ -83,25 +83,5 @@ namespace GI.UnityToolkit.Events
         {
             _actions.Remove(action);
         }
-        
-#if UNITY_EDITOR
-#if ODIN_INSPECTOR
-        [Title("Debugging", TitleAlignment = TitleAlignments.Centered)]
-        [Button("Raise Event"), DisableInEditorMode]
-#else
-        private bool InEditorMode => Application.isEditor && Application.isPlaying == false;
-
-        [ShowNonSerializedField]
-#endif
-        [NonSerialized] protected T debugValue = default;
-        
-#if ODIN_INSPECTOR
-        [Button("Raise Event"), DisableInEditorMode]
-#else
-        [Button("Raise Event"), DisableIf(nameof(InEditorMode))]
-#endif
-        [UsedImplicitly]
-        private void DebugRaiseEvent() => Raise(debugValue);
-#endif
     }
 }
