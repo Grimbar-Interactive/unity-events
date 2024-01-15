@@ -5,9 +5,12 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
 namespace GI.UnityToolkit.Events
 {
-
     public abstract class GenericGameEvent<T> : DataObject
     {
 #if ODIN_INSPECTOR
