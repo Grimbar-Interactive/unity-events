@@ -21,7 +21,7 @@ namespace GI.UnityToolkit.Events
         [SerializeField]
         private UnityEvent<T> response = null;
 
-        private readonly List<Action<T>> _actions = new();
+        private readonly List<Action<T>> _actions = new List<Action<T>>();
 
         [UsedImplicitly]
         public void Raise(T value)

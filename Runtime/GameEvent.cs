@@ -26,7 +26,7 @@ namespace GI.UnityToolkit.Events
 #endif
         [SerializeField] private UnityEvent response = null;
 
-        private readonly List<Action> _actions = new();
+        private readonly List<Action> _actions = new List<Action>();
         
 #if ODIN_INSPECTOR
         [Title("Debugging", TitleAlignment = TitleAlignments.Centered)]
