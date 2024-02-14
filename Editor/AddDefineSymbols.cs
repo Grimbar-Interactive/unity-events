@@ -1,6 +1,7 @@
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
+using UnityEditor.Compilation;
 
 namespace GI.UnityToolkit.Events.Editor
 {
@@ -8,6 +9,7 @@ namespace GI.UnityToolkit.Events.Editor
     /// Adds the given define symbols to PlayerSettings define symbols.
     /// Just add your own define symbols to the Symbols property at the below.
     /// </summary>
+    [InitializeOnLoad]
     public class AddDefineSymbols : AssetPostprocessor, IActiveBuildTargetChanged
     {
         /// <summary>
@@ -17,9 +19,15 @@ namespace GI.UnityToolkit.Events.Editor
         {
             "GI_EVENTS"
         };
-
+        
         public int callbackOrder => 0;
 
+        static AddDefineSymbols()
+        {
+            CompilationPipeline.compilationStarted += ProcessBatchModeCompileFinish;
+        }
+
+        private static void ProcessBatchModeCompileFinish(object obj) => AddDefinesAsNeeded();
         private void OnPreprocessAsset() => AddDefinesAsNeeded();
         public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget) => AddDefinesAsNeeded();
 
