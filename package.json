@@ -1,8 +1,8 @@
 {
-  "name": "com.grimbar-interactive.unity-events",
+  "name": "com.grimbarinteractive.unityevents",
   "displayName": "Unity Events",
-  "version": "1.2.6",
-  "unity": "2021.3",
+  "version": "1.2.7",
+  "unity": "2022.3",
   "description": "Event scriptable objects and listeners.",
   "keywords": [ "events", "game", "games", "unity" ],
   "category": "unity",
@@ -11,6 +11,6 @@
   "author": {
 	  "name": "Grimbar Interactive",
 	  "email": "jacob@grimbar.dev",
-	  "url": "http://www.grimbar.dev"
+	  "url": "http://grimbarinteractive.com"
   }
 }
