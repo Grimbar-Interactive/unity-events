@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using GI.UnityToolkit.Utilities;
 
-namespace GI.UnityToolkit.Events
+namespace GI.UnityToolkit.Events.Components
 {
-    public class RandomEvent : MonoBehaviour
+    public class RandomEventInvoker : MonoBehaviour
     {
         [SerializeField] private List<UnityEvent> events = new List<UnityEvent>();
 

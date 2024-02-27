@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GI.UnityToolkit.Events
+namespace GI.UnityToolkit.Events.Components
 {
     public class UnityLifetimeEvents : MonoBehaviour
     {
