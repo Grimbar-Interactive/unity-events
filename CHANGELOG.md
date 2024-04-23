@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ==
-## [1.2.01] - 2024-02-26
+## [1.2.11] - 2024-04-23
+### Added
+- Added new Play and SetText methods without color for Text VFX events.
+
+## [1.2.10] - 2024-02-26
 ### Fixed
 - Newer Unity Variables dependency.
 

@@ -7,6 +7,11 @@ namespace GI.UnityToolkit.Events
     {
         [SerializeField] private TMP_Text text = default;
 
+        public void SetText(string effectText)
+        {
+            text.text = effectText;
+        }
+        
         public void SetText(string effectText, Color color)
         {
             text.text = effectText;

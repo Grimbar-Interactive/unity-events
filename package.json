@@ -1,7 +1,7 @@
 {
     "name": "com.grimbarinteractive.unity-events",
     "displayName": "Unity Events",
-    "version": "1.2.10",
+    "version": "1.2.11",
     "unity": "2022.3",
     "description": "Event scriptable objects and listeners.",
     "keywords": [ "events", "game", "games", "unity" ],
